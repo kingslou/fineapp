@@ -8,14 +8,14 @@ import android.app.Application;
 
 public class App extends Application {
 
-    private App application;
+    private static App application;
     @Override
     public void onCreate() {
         super.onCreate();
         application = this;
     }
 
-    public App getAppInstance(){
+    public static App getAppInstance(){
         return application;
     }
 }

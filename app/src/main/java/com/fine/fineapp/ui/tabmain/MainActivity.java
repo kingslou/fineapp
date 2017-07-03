@@ -2,6 +2,7 @@ package com.fine.fineapp.ui.tabmain;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -21,22 +22,20 @@ import com.shizhefei.view.viewpager.SViewPager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends AppCompatActivity {
     private IndicatorViewPager indicatorViewPager;
+    @Nullable
     @BindView(R.id.tabmain_indicator)
     Indicator indicator;
     @BindView(R.id.tabmain_viewPager)
     SViewPager viewPager;
 
     @Override
-    protected int getContentLayoutResID() {
-        return R.layout.activity_main;
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        indicator.setOnTransitionListener(new OnTransitionTextListener().setColor(Color.RED, Color.GRAY));
+        setContentView(R.layout.activity_tabmain);
+        ButterKnife.bind(this);
+        indicator.setOnTransitionListener(new OnTransitionTextListener().setColor(getResources().getColor(R.color.color_app_primary), Color.GRAY));
         indicatorViewPager = new IndicatorViewPager(indicator, viewPager);
         indicatorViewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
         // 禁止viewpager的滑动事件

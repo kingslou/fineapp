@@ -38,6 +38,8 @@ public class LoginPresenter implements Presenter<LoginMvpView> {
         mSubscription = DataManger.getInstance().loginDb(name,pwd).subscribe(new Subscriber<Account>() {
             @Override
             public void onCompleted() {
+                mMvpView.showProgress(false);
+                mMvpView.setSignInButtonEnabled(true);
             }
 
             @Override
@@ -51,7 +53,6 @@ public class LoginPresenter implements Presenter<LoginMvpView> {
             public void onNext(Account account) {
                 //// TODO: 2017/7/3  cach Account
                 mMvpView.onSignInSuccessful();
-                mMvpView.setSignInButtonEnabled(true);
             }
         });
 

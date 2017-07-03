@@ -2,41 +2,52 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/work_item_bg"
     android:orientation="vertical">
-
-    <include layout="@layout/navigation_bar2"></include>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp">
 
-        <Button
+        <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:drawableBottom="@mipmap/work_item_announce"
             android:text="占位1" />
 
-        <Button
+        <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="占位=2" />
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:drawableBottom="@mipmap/work_item_announce"
+            android:text="占位2" />
 
-        <Button
+        <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:drawableBottom="@mipmap/work_item_announce"
             android:text="占位3" />
 
-        <Button
+        <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:drawableBottom="@mipmap/work_item_announce"
             android:text="占位4" />
-
     </LinearLayout>
-
+    <include layout="@layout/divide_line"></include>
     <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="40dp"
         android:id="@+id/recycleViewWork"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -15,6 +15,7 @@ import com.fine.fineapp.ui.base.BaseActivity;
 import com.fine.fineapp.ui.login.LoginMvpView;
 import com.fine.fineapp.ui.login.LoginPresenter;
 import com.fine.fineapp.ui.tabmain.MainActivity;
+import com.fine.fineapp.utils.DialogFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +83,11 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
 
     @Override
     public void showProgress(boolean show) {
-
+        if(show){
+            DialogFactory.showProgressIndeterminateStyle(LoginActivity.this);
+        }else{
+            DialogFactory.hideLoading();
+        }
     }
 
     @Override

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string-array name="img_options">
+        <item>相册</item>
+        <item>拍照</item>
+    </string-array>
+
+    <string-array name="select_options">
+        <item>全部消息</item>
+        <item>指令下达</item>
+        <item>公告</item>
+        <item>审批</item>
+    </string-array>
+
+    <string-array name="gender_options">
+
+        <item>男</item>
+        <item>女</item>
+
+    </string-array>
+
+    <string-array name="gender_index">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="letters">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+        <item>#</item>
+    </string-array>
+
+    <string-array name="msg_eng">
+        <item>sent a message</item>
+        <item>sent a picture</item>
+        <item>sent a voice</item>
+        <item>sent location message</item>
+        <item>sent a video</item>
+        <item>sent a file</item>
+        <item>%1 contacts sent %2 messages</item>
+    </string-array>
+
+    <string-array name="msg_ch">
+        <item>发来一条消息</item>
+        <item>发来一张图片</item>
+        <item>发来一段语音</item>
+        <item>发来位置信息</item>
+        <item>发来一个视频</item>
+        <item>发来一个文件</item>
+        <item>%1个联系人发来%%2条消息</item>
+    </string-array>
+
+    <string-array name="array_digits">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+        <item>d</item>
+        <item>e</item>
+        <item>f</item>
+    </string-array>
+</resources>

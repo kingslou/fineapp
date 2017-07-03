@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_page_background"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/navigation_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_space_15"
+        android:layout_marginBottom="@dimen/margin_space_15"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/dimen_heading_text"
+            android:text="@string/str_init_pwd"
+            android:textColor="@color/color_heading_black"
+            />
+    </RelativeLayout>
+
+    <include layout="@layout/content_authcode" ></include>
+
+    <RelativeLayout
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_login_btn_height"
+        android:background="@drawable/btn_bg"
+        android:layout_margin="@dimen/margin_space_20"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_btn_text_next"
+            android:textSize="@dimen/dimen_login_text"
+            android:textColor="@color/color_label_white"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

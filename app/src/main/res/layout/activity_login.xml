@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_page_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/navigation_bar_style"
+        android:gravity="center"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <include layout="@layout/divide_line"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_space_15"
+        android:layout_marginTop="@dimen/margin_space_15">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/str_heading_login"
+            android:textColor="@color/color_heading_black"
+            android:textSize="@dimen/dimen_heading_text" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/margin_space_15"
+            android:text="@string/str_label_phone"
+            android:textColor="@color/color_label_black_grey"
+            android:textSize="@dimen/dimen_phone_text" />
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_label_phone_china"
+            android:textColor="@color/color_label_black"
+            android:textSize="@dimen/dimen_label_text"
+            android:inputType="number"
+            android:layout_marginLeft="@dimen/margin_space_5"
+            android:layout_marginTop="@dimen/margin_space_15"
+            android:layout_marginBottom="@dimen/margin_space_15"
+            android:layout_gravity="center_vertical"
+            />-->
+
+        <EditText
+            android:id="@+id/edit_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/margin_space_5"
+            android:background="@null"
+            android:hint="@string/str_notice_account"
+            android:textColorHint="@color/color_input_tip_grey"
+            android:textSize="@dimen/dimen_label_text" />
+    </LinearLayout>
+
+    <include layout="@layout/divide_line"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/margin_space_15"
+            android:text="@string/str_label_pwd"
+            android:textColor="@color/color_label_black_grey"
+            android:textSize="@dimen/dimen_phone_text" />
+
+        <EditText
+            android:id="@+id/edit_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/margin_space_5"
+            android:layout_marginLeft="@dimen/margin_space_5"
+            android:layout_marginTop="@dimen/margin_space_5"
+            android:background="@null"
+            android:hint="@string/str_notice_password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/color_input_tip_grey"
+            android:textSize="@dimen/dimen_label_text" />
+    </LinearLayout>
+
+    <include layout="@layout/divide_line"></include>
+
+    <RelativeLayout
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_login_btn_height"
+        android:layout_margin="@dimen/margin_space_20"
+        android:background="@color/color_sex_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/str_btn_text_login"
+            android:textColor="@color/color_label_white"
+            android:textSize="@dimen/dimen_login_text" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/btn_forgot_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/margin_space_15"
+            android:padding="@dimen/margin_space_5"
+            android:text="@string/str_label_init_pwd"
+            android:textColor="@color/color_action_grey"
+            android:textSize="@dimen/dimen_action_text" />
+
+        <TextView
+            android:id="@+id/btn_service_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btn_service_tel_number"
+            android:padding="@dimen/margin_space_5"
+            android:text="@string/str_label_service_tel"
+            android:textColor="@color/color_label_black_grey"
+            android:textSize="@dimen/dimen_action_text"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/btn_service_tel_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin_space_15"
+            android:padding="@dimen/margin_space_5"
+            android:textColor="@color/color_action_blue"
+            android:textSize="@dimen/dimen_action_text"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/btn_register_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin_space_15"
+            android:padding="@dimen/margin_space_5"
+            android:text="@string/str_label_register_account"
+            android:textColor="@color/color_action_blue"
+            android:textSize="@dimen/dimen_action_text"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

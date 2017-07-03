@@ -1,7 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
-android {
 
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
+android {
     signingConfigs {
         release {
             storeFile file("../jingmao.jks")
@@ -44,6 +51,11 @@ dependencies {
     final RUNNER_VERSION = '0.4'
     final BUTTERKNIFE_VERSION = '8.0.1'
 
+    // Material Dialog
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.7@aar') {
+        transitive = true
+    }
+    compile 'de.greenrobot:eventbus:2.4.0'
     compile 'com.shizhefei:ViewPagerIndicator:1.1.6'
     compile 'com.android.support:support-v4:23.4.0'
 

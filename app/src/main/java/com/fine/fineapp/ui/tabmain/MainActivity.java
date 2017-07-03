@@ -27,11 +27,15 @@ public class MainActivity extends BaseActivity {
     Indicator indicator;
     @BindView(R.id.tabmain_viewPager)
     SViewPager viewPager;
+
+    @Override
+    protected int getContentLayoutResID() {
+        return R.layout.activity_main;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tabmain);
-        ButterKnife.bind(this);
         indicator.setOnTransitionListener(new OnTransitionTextListener().setColor(Color.RED, Color.GRAY));
         indicatorViewPager = new IndicatorViewPager(indicator, viewPager);
         indicatorViewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));

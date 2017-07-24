@@ -1,8 +1,11 @@
 package com.fine.fineapp.ui;
 
+import android.bluetooth.BluetoothClass;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -102,6 +105,37 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
 
     @Override
     public void showGeneralSignInError() {
+
+    }
+
+    private void quitApp() {
+        if (Build.VERSION.SDK_INT >= 21) {
+            finishAndRemoveTask();
+        } else {
+
+            finish();
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            // 退出当前应用
+//            Intent intent = new Intent(Intent.ACTION_MAIN);
+//            intent.addCategory(Intent.CATEGORY_HOME);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//            startActivity(intent);
+//            finish();
+//            android.os.Process.killProcess(android.os.Process.myPid());
+            quitApp();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
 
     }
 

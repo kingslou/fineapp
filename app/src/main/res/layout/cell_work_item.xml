@@ -15,10 +15,10 @@
 
         <ImageView
             android:id="@+id/image_work_icon"
-            android:layout_width="@dimen/dimen_image_xheight"
-            android:layout_height="@dimen/dimen_image_xwidth"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/margin_space_10" />
+            android:layout_width="@dimen/dimen_notice_data_funnel_minimum_height"
+            android:layout_height="@dimen/dimen_notice_data_funnel_minimum_height"
+            android:scaleType="centerCrop"
+            android:layout_margin="@dimen/margin_space_5" />
 
         <TextView
             android:id="@+id/text_work_name"

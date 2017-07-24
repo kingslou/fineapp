@@ -8,7 +8,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.Main" >
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,6 +18,7 @@
         </activity>
 
         <activity android:name=".ui.tabmain.MainActivity"/>
+        <activity android:name=".ui.work.WorkContentActivity"/>
 
     </application>
 

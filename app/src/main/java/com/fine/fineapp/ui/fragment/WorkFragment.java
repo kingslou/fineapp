@@ -1,6 +1,10 @@
 package com.fine.fineapp.ui.fragment;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,11 +15,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.fine.fineapp.R;
+import com.fine.fineapp.data.DummyContent;
 import com.fine.fineapp.data.model.WorkItem;
 import com.fine.fineapp.ui.base.BaseAdapter;
 import com.fine.fineapp.ui.base.BaseViewHolder;
 import com.fine.fineapp.ui.base.OnItemClickListener;
+import com.fine.fineapp.ui.work.WorkContentActivity;
+import com.google.gson.Gson;
 import com.shizhefei.fragment.LazyFragment;
 
 import java.util.ArrayList;
@@ -44,11 +52,6 @@ public class WorkFragment extends LazyFragment {
         View view = inflater.inflate(R.layout.fragment_work, null);
         setContentView(view);
         ButterKnife.bind(this,view);
-        for(int i=0;i<9;i++){
-            WorkItem workItem = new WorkItem("测试"+i,"测试"+i,"sdfsd",i);
-            workItemList.add(workItem);
-        }
-
         initAdapter();
     }
 
@@ -59,11 +62,19 @@ public class WorkFragment extends LazyFragment {
         baseAdapter = new BaseAdapter() {
             @Override
             protected void onBindView(BaseViewHolder holder, int position) {
-                WorkItem workItem = workItemList.get(position);
-                ImageView mWorkIcon = holder.getView(R.id.image_work_icon);
+                DummyContent.DummyItem workItem = DummyContent.ITEMS.get(position);
+                final ImageView mWorkIcon = holder.getView(R.id.image_work_icon);
                 TextView mWorkName = holder.getView(R.id.text_work_name);
-                mWorkName.setText(workItem.getWorkName());
-                Glide.with(getActivity()).load(R.mipmap.work_item_application).into(mWorkIcon);
+                mWorkName.setText(workItem.author);
+                Glide.with(getActivity()).load(workItem.photoId).asBitmap().fitCenter().into(new BitmapImageViewTarget(mWorkIcon){
+                    @Override
+                    protected void setResource(Bitmap resource) {
+                        super.setResource(resource);
+                        RoundedBitmapDrawable circularBitmapDrawable = RoundedBitmapDrawableFactory.create(getActivity().getResources(), resource);
+                        circularBitmapDrawable.setCircular(true);
+                        mWorkIcon.setImageDrawable(circularBitmapDrawable);
+                    }
+                });
             }
 
             @Override
@@ -73,14 +84,17 @@ public class WorkFragment extends LazyFragment {
 
             @Override
             public int getItemCount() {
-                return workItemList.size();
+                return DummyContent.ITEMS.size();
             }
         };
         mRecyclerView.setAdapter(baseAdapter);
         baseAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-
+                Intent intent = new Intent();
+                intent.putExtra("key",DummyContent.ITEMS.get(position).id);
+                intent.setClass(getActivity(), WorkContentActivity.class);
+                startActivity(intent);
             }
         });
     }

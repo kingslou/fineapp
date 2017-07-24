@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.fine.fineapp.R;
@@ -82,5 +83,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         transaction.addToBackStack(null);
         // 执行事务
         transaction.commit();
+    }
+
+    public void setToolbar(Toolbar toolbar) {
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

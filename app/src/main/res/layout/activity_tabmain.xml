@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    <include layout="@layout/toolbar"></include>
+    android:fitsSystemWindows="true">
 
-    <com.shizhefei.view.viewpager.SViewPager
-        android:id="@+id/tabmain_viewPager"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#eee"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <com.shizhefei.view.indicator.FixedIndicatorView
-        android:background="#fff"
-        android:id="@+id/tabmain_indicator"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        <include layout="@layout/include_toolbar"></include>
 
-</LinearLayout>
+        <com.shizhefei.view.viewpager.SViewPager
+            android:id="@+id/tabmain_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#eee" />
+
+        <com.shizhefei.view.indicator.FixedIndicatorView
+            android:id="@+id/tabmain_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#fff" />
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
